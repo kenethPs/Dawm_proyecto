@@ -1,13 +1,53 @@
 body {
-  background-color: #AFAFDC;
+	background-color: #AFAFDC;
 }
-
-h1 {
- 
-  text-align: center;
-}
-
 p {
-  font-family: verdana;
-  font-size: 20px;
+  text-align: justify;
+}
+#imgPerfil_Nom > h1{
+	text-shadow: 2px 2px 4px #000000;
+	-webkit-text-stroke: 0.75px #8A84E2
+}
+#imgPerfil_Nom > img{
+	border-radius: 50px;
+}
+#navegador {
+	display: flex;
+	background-color: #8A84E2;
+}
+#navegador > div {
+	width: 300px;
+	margin: 5px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+}
+#imgPerfil_Nom {
+	display: flex;
+}
+#navegador > img,h1 {
+	width: 300px;
+	font-size: 25px;
+}
+#Acerca_de {
+	display: flex;
+}
+#Acerca_de > div {
+	width: 800px;
+	font-size: 25px;
+	border-radius: 50px;
+}
+
+#Acerca_de > #info{
+	background-color: #B7D3F2;
+	padding: 10px;
+	
+}
+#Acerca_de > #habil{
+	background-color: #84AFE6;
+	
+}
+#Acerca_de > #contacto{
+	background-color: #79BEEE;
+	
 }
