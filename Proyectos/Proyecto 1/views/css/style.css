@@ -1,19 +1,19 @@
 body {
-	background-color: #AFAFDC;
+	background-color: #bc8c4f;
 }
 p {
   text-align: justify;
 }
 #imgPerfil_Nom>h1{
-	text-shadow: 2px 2px 4px #000000;
-	-webkit-text-stroke: 0.75px #8A84E2
+	text-shadow: 2px 2px 4px #3C3C44;
+	-webkit-text-stroke: 0.75px #895d3a;
 }
 #imgPerfil_Nom>img{
 	border-radius: 50px;
 }
 #navegador{
 	display: flex;
-	background-color: #8A84E2;
+	background-color: #895d3a;
 }
 #navegador>div{
 	width: 300px;
@@ -21,9 +21,10 @@ p {
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
+	width: 100%
 }
 #navegador div:hover {
-  background-color: #ddd;
+  background-color: #bc8c4f;
   color: black;
 }
 
@@ -45,17 +46,17 @@ p {
 }
 
 #Acerca_de>#info{
-	background-color: #B7D3F2;
+	background-color: #d1bb60;
 	padding: 10px;
 	
 }
 #Acerca_de>#habil{
-	background-color: #84AFE6;
+	background-color: #e2e2a5;
 	padding: 10px;
 	
 }
 #Acerca_de>#contacto{
-	background-color: #79BEEE;
+	background-color: #d1bb60;
 	padding: 10px;
 }
 #Est_cert{
@@ -68,29 +69,44 @@ p {
 	padding: 10px;
 }
 #Est_cert>#info_acad{
-	background-color: #84AFE6;
-	
-	
-}#Est_cert>#info_adic{
-	background-color: #79BEEE;
-	
+	background-color: #42281a;
 }
+#Est_cert>#info_adic{
+	background-color: #603a29;	
+}
+#Est_cert> *{
+	color: white;
+}
+
+
+
+
 #Expe {
     display: flex;
 	flex-wrap: wrap;
+	row-gap: 0.5rem;
 	column-gap: 0.5rem;
 }
+
 #Expe> div:nth-child(1),
 #Expe> div:nth-child(3),
 #Expe> div:nth-child(5),
 #Expe> div:nth-child(7) {
-	width: 33%;
+	width: 30%;
+	border-radius: 25px;
+	padding: 10px;
+	background-color: #c2c293;
 }
+
 #Expe> div:nth-child(2),
 #Expe> div:nth-child(4),
 #Expe> div:nth-child(6),
 #Expe> div:nth-child(8) {
-	width: 66%;
+	width: 65%;
+	border-radius: 25px;
+	padding: 5px;
+	background-color: #895d3a;
+	
 }
 
 @media (max-width: 600px) {
@@ -101,8 +117,7 @@ p {
 	#Acerca_de>#habil,
 	#Acerca_de>#contacto,
 	#Est_cert>#info_acad,
-	#Est_cert>#info_adic,
-	#navegador>div{ 
+	#Est_cert>#info_adic{ 
 		width: 100%;
 	}	
 }
