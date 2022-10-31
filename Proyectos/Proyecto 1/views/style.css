@@ -4,50 +4,106 @@ body {
 p {
   text-align: justify;
 }
-#imgPerfil_Nom > h1{
+#imgPerfil_Nom>h1{
 	text-shadow: 2px 2px 4px #000000;
 	-webkit-text-stroke: 0.75px #8A84E2
 }
-#imgPerfil_Nom > img{
+#imgPerfil_Nom>img{
 	border-radius: 50px;
 }
-#navegador {
+#navegador{
 	display: flex;
 	background-color: #8A84E2;
 }
-#navegador > div {
+#navegador>div{
 	width: 300px;
 	margin: 5px;
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
 }
-#imgPerfil_Nom {
+#navegador div:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+#imgPerfil_Nom{
 	display: flex;
 }
-#navegador > img,h1 {
+#navegador>img,h1{
 	width: 300px;
 	font-size: 25px;
 }
-#Acerca_de {
+#Acerca_de{
 	display: flex;
 }
-#Acerca_de > div {
+#Acerca_de>div{
 	width: 800px;
 	font-size: 25px;
 	border-radius: 50px;
 }
 
-#Acerca_de > #info{
+#Acerca_de>#info{
 	background-color: #B7D3F2;
 	padding: 10px;
 	
 }
-#Acerca_de > #habil{
+#Acerca_de>#habil{
 	background-color: #84AFE6;
+	padding: 10px;
 	
 }
-#Acerca_de > #contacto{
+#Acerca_de>#contacto{
+	background-color: #79BEEE;
+	padding: 10px;
+}
+#Est_cert{
+	display: flex;
+}
+#Est_cert>div{
+	width: 50%;
+	border-radius: 50px;
+	
+	padding: 10px;
+}
+#Est_cert>#info_acad{
+	background-color: #84AFE6;
+	
+	
+}#Est_cert>#info_adic{
 	background-color: #79BEEE;
 	
 }
+#Expe {
+    display: flex;
+	flex-wrap: wrap;
+	column-gap: 0.5rem;
+}
+#Expe> div:nth-child(1),
+#Expe> div:nth-child(3),
+#Expe> div:nth-child(5),
+#Expe> div:nth-child(7) {
+	width: 33%;
+}
+#Expe> div:nth-child(2),
+#Expe> div:nth-child(4),
+#Expe> div:nth-child(6),
+#Expe> div:nth-child(8) {
+	width: 66%;
+}
+
+@media (max-width: 600px) {
+	#navegador,#Acerca_de,#Est_cert,#Expe {   
+		flex-direction: column;
+	}
+	#Acerca_de>#info,
+	#Acerca_de>#habil,
+	#Acerca_de>#contacto,
+	#Est_cert>#info_acad,
+	#Est_cert>#info_adic,
+	#navegador>div{ 
+		width: 100%;
+	}	
+}
+
