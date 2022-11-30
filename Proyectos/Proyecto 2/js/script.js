@@ -1,5 +1,5 @@
 window.onload = function (){
-        const api = "data.JSON";
+        const api = "http://localhost:3000/films";
         //const api = "https://damp-beach-17296.herokuapp.com/https://ghibliapi.herokuapp.com/films";
         const HTMLResponse = document.querySelector("#contenedor");
         const listado = document.querySelector("#anios");
@@ -45,7 +45,6 @@ window.onload = function (){
                 }); 
                 
                 let arr = films
-                console.log(arr);
                 let peliculasNombre = arr.map(fil => fil.title)
                 
                 let peliculasPuntos = arr.map(fil => fil.rt_score) 
@@ -94,9 +93,9 @@ document.addEventListener("keyup", e=>{
         })
     }
 })
-document.getElementById('anios').addEventListener('Onclick', () => {
+document.getElementById('anios').addEventListener('click', () => {
     let id = document.getElementById("anios").value
-    const api = "data.JSON";
+    const api = "http://localhost:3000/films";
     //const api = "https://ghibliapi.herokuapp.com/films";
     fetch(api)
         .then(response => response.json())
@@ -104,7 +103,7 @@ document.getElementById('anios').addEventListener('Onclick', () => {
             let peliculasNombre = []
             let peliculasPuntos = []
             films.forEach(film => {
-                if(film.rt_score == id){
+                if(film.release_date == id){
                     peliculasNombre.push(film.title)
                     peliculasPuntos.push(film.rt_score)
                 } 
@@ -124,10 +123,9 @@ document.getElementById('anios').addEventListener('Onclick', () => {
                     }]
                 };
                 const config = {
-                    type: 'bar',
+                    type: 'line',
                     data,
                     options: {
-                      indexAxis: 'y',
                       scales: {
                         y: {
                           ticks: {
@@ -137,9 +135,8 @@ document.getElementById('anios').addEventListener('Onclick', () => {
                       }
                     }
                 };
-                
-                let chart1 = new Chart(
-                    document.getElementById("mychart1"),
+                let chart2 = new Chart(
+                    document.getElementById("mychart2").getContext('2d'),
                     config
                 );
     });
