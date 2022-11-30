@@ -9,14 +9,17 @@ window.onload = function (){
                     let div1 = document.createElement("div")
                     div1.className += "col-lg-4 col-md-6 mb-4"
                     div1.className += " peliculas"
+                    
                     let div2 = document.createElement("div")
                     div2.className += "card"
                     let div3 = document.createElement("div")
                     div3.className += "bg-image hover-overlay ripple"
                     div3.setAttribute("data-mdb-ripple-color","light")
                     let image = document.createElement("img")
+
                     image.setAttribute("src",film.movie_banner)
                     image.className += "img-fluid"
+                    image.className += " slideExpandUp"
                     div3.appendChild(image)
                     div2.appendChild(div3)
                     let div4 = document.createElement("div")
@@ -24,9 +27,11 @@ window.onload = function (){
                     let h5 = document.createElement("h5")
                     h5.innerText = film.title
                     h5.className += "card-title"
+                    h5.className += " slideExpandUp"
                     let p = document.createElement("p")
                     p.innerText = film.description
                     p.className += "card-text"
+                    p.className += " slideExpandUp"
                     div4.appendChild(h5)
                     div4.appendChild(p)
                     div2.appendChild(div4)
