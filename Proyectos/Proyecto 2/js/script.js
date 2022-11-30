@@ -1,5 +1,6 @@
 window.onload = function (){
-        const api = "https://ghibliapi.herokuapp.com/films";
+        const api = "data.JSON";
+        //const api = "https://damp-beach-17296.herokuapp.com/https://ghibliapi.herokuapp.com/films";
         const HTMLResponse = document.querySelector("#contenedor");
         const listado = document.querySelector("#anios");
         fetch(api)
@@ -93,3 +94,54 @@ document.addEventListener("keyup", e=>{
         })
     }
 })
+document.getElementById('anios').addEventListener('Onclick', () => {
+    let id = document.getElementById("anios").value
+    const api = "data.JSON";
+    //const api = "https://ghibliapi.herokuapp.com/films";
+    fetch(api)
+        .then(response => response.json())
+        .then( films =>{
+            let peliculasNombre = []
+            let peliculasPuntos = []
+            films.forEach(film => {
+                if(film.rt_score == id){
+                    peliculasNombre.push(film.title)
+                    peliculasPuntos.push(film.rt_score)
+                } 
+            })
+                const data = {
+                    labels: peliculasNombre,
+                    datasets: [{
+                      label: "Popularidad",
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgb(255, 99, 132)'
+                      ],
+                      borderWidth: 1,
+                      data: peliculasPuntos,
+                    }]
+                };
+                const config = {
+                    type: 'bar',
+                    data,
+                    options: {
+                      indexAxis: 'y',
+                      scales: {
+                        y: {
+                          ticks: {
+                            crossAlign: 'far',
+                          }
+                        }
+                      }
+                    }
+                };
+                
+                let chart1 = new Chart(
+                    document.getElementById("mychart1"),
+                    config
+                );
+    });
+})
+
